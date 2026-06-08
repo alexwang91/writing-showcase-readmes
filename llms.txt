@@ -1,0 +1,34 @@
+# writing-showcase-readmes
+
+This repository contains one Codex skill: `writing-showcase-readmes`.
+
+Purpose: create, rewrite, or polish GitHub README files for repositories, agent skills, CLIs, libraries, apps, and open source launches. The skill focuses on rich but honest README elements: badges, small icons, navigation rows, proof tables, Star History charts, compatibility matrices, quickstarts, docs tables, comparison tables, community links, and collapsible details.
+
+Install for Codex:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R skills/writing-showcase-readmes ~/.codex/skills/
+```
+
+Windows PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.codex\skills" | Out-Null
+Copy-Item -Recurse -Force ".\skills\writing-showcase-readmes" "$env:USERPROFILE\.codex\skills\writing-showcase-readmes"
+```
+
+Invoke:
+
+```text
+Use $writing-showcase-readmes to rewrite this repository README into a polished showcase.
+```
+
+Important files:
+
+- `skills/writing-showcase-readmes/SKILL.md`: core workflow.
+- `skills/writing-showcase-readmes/references/readme-elements.md`: README element library and snippets.
+- `skills/writing-showcase-readmes/agents/openai.yaml`: Codex UI metadata.
+- `scripts/validate_skill.py`: local/CI validator.
+
+Integrity rule: the skill must not invent metrics, screenshots, CI status, package names, adoption numbers, benchmarks, compatibility, or governance claims.

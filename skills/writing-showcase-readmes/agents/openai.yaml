@@ -1,0 +1,4 @@
+interface:
+  display_name: "Showcase README Writer"
+  short_description: "Craft rich, credible GitHub README files"
+  default_prompt: "Use $writing-showcase-readmes to rewrite this repository README into a polished showcase."
