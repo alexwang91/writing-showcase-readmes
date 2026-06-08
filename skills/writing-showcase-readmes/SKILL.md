@@ -1,13 +1,13 @@
 ---
 name: writing-showcase-readmes
-description: Use when creating, rewriting, or polishing GitHub README files for repositories, agent skills, CLIs, libraries, apps, or open source launches; especially when the user asks for badges, small icons, screenshots, demos, star history charts, proof tables, install steps, comparison tables, community links, or an attractive README.
+description: Use when creating, rewriting, or polishing GitHub README files for repositories, portable agent skills, Codex skills, Claude/Hermes/OpenClaw-style instruction packs, CLIs, libraries, apps, or open source launches; especially when the user asks for badges, small icons, screenshots, demos, star history charts, proof tables, install steps, runtime compatibility tables, comparison tables, community links, or an attractive README.
 ---
 
 # Writing Showcase READMEs
 
 ## Overview
 
-Create a README that works like a strong open source front page: fast trust above the fold, concrete proof in the middle, and clear paths to install, learn, contribute, and join.
+Create a README that works like a strong open source front page: fast trust above the fold, concrete proof in the middle, and clear paths to install, import into agents, learn, contribute, and join.
 
 Use every attractive element the project can honestly support. Never invent metrics, screenshots, package names, CI status, adoption numbers, benchmarks, or compatibility claims.
 
@@ -15,13 +15,13 @@ Use every attractive element the project can honestly support. Never invent metr
 
 1. Inspect the input:
    - For a local repository, read `README*`, manifests, docs, `.github/workflows`, `LICENSE`, `CONTRIBUTING*`, releases, package metadata, CLI help, screenshots, GIFs, and docs links.
-   - For a skill folder, read `SKILL.md`, `agents/openai.yaml`, references, scripts, and examples.
+   - For a skill folder, read `SKILL.md`, optional agent metadata such as `agents/openai.yaml`, references, scripts, examples, and any runtime-specific rules or memory files.
    - For a GitHub URL, fetch the current README and use the repo slug for badges and star history.
 2. Identify the promise:
    - Audience: who should care.
    - Outcome: what changes after installation or use.
    - Proof: benchmark, demo, adoption signal, compatibility matrix, test status, package distribution, or real examples.
-   - First action: download, install, copy command, run skill, read docs, or join community.
+   - First action: download, install, import into an agent, copy command, run skill, read docs, or join community.
 3. Choose the README mode:
    - **Skill collection or agent workflow**: hero image, one sharp claim, quickstart, "why this exists", problem/fix sections, reference catalog.
    - **Library, CLI, product, or developer tool**: centered hero, badges, nav row, demo media, what it does, how it works diagram, quickstart, proof tables, compatibility/integrations, install, docs, comparison, community.

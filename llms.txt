@@ -1,8 +1,13 @@
 # writing-showcase-readmes
 
-This repository contains one Codex skill: `writing-showcase-readmes`.
+This repository contains one portable agent skill: `writing-showcase-readmes`.
 
 Purpose: create, rewrite, or polish GitHub README files for repositories, agent skills, CLIs, libraries, apps, and open source launches. The skill focuses on rich but honest README elements: badges, small icons, navigation rows, proof tables, Star History charts, compatibility matrices, quickstarts, docs tables, comparison tables, community links, and collapsible details.
+
+Supported usage:
+
+- Codex: native local skill under `~/.codex/skills`.
+- Claude Code, Hermes Agent, OpenClaw, Goose, Cursor, Aider, Gemini CLI, and other instruction-aware agents: portable Markdown instruction/playbook. Provide `SKILL.md` plus `references/readme-elements.md` as project context, rules, memory, or skill files.
 
 Install for Codex:
 
@@ -24,11 +29,19 @@ Invoke:
 Use $writing-showcase-readmes to rewrite this repository README into a polished showcase.
 ```
 
+Portable invocation for other agents:
+
+```text
+Use the Showcase README Writer skill at skills/writing-showcase-readmes/SKILL.md.
+Also load skills/writing-showcase-readmes/references/readme-elements.md.
+Rewrite this repository README into a polished showcase without inventing evidence.
+```
+
 Important files:
 
 - `skills/writing-showcase-readmes/SKILL.md`: core workflow.
 - `skills/writing-showcase-readmes/references/readme-elements.md`: README element library and snippets.
-- `skills/writing-showcase-readmes/agents/openai.yaml`: Codex UI metadata.
+- `skills/writing-showcase-readmes/agents/openai.yaml`: Codex UI metadata; other agents can ignore it.
 - `scripts/validate_skill.py`: local/CI validator.
 
 Integrity rule: the skill must not invent metrics, screenshots, CI status, package names, adoption numbers, benchmarks, compatibility, or governance claims.

@@ -94,6 +94,21 @@ def main() -> None:
     require("alexwang91/writing-showcase-readmes" in readme, "README must use the published GitHub repository slug")
     require("Integrity rule" in llms, "llms.txt must include the integrity rule")
 
+    runtime_names = [
+        "Codex",
+        "Claude Code",
+        "Hermes",
+        "OpenClaw",
+        "Goose",
+        "Cursor",
+        "Aider",
+        "Gemini CLI",
+    ]
+    for runtime in runtime_names:
+        require(runtime in readme, f"README must mention runtime: {runtime}")
+    require("portable" in llms.lower(), "llms.txt must explain portable agent usage")
+    require("runtime compatibility" in skill.lower(), "SKILL.md must mention runtime compatibility README work")
+
     for path, text in [
         (SKILL_FILE, skill),
         (REFERENCE_FILE, reference),

@@ -9,10 +9,13 @@
 
 # Showcase README Writer
 
-_A Codex skill for turning sparse repos and agent skills into honest, high-conversion GitHub front pages._
+_A portable agent skill for turning sparse repos, skill packs, CLIs, and apps into honest, high-conversion GitHub front pages._
 
 <p align="center">
-  <a href="skills/writing-showcase-readmes/SKILL.md"><img src="https://img.shields.io/badge/Codex-skill-111827?logo=openai&logoColor=white" alt="Codex skill"></a>
+  <a href="skills/writing-showcase-readmes/SKILL.md"><img src="https://img.shields.io/badge/agent_skill-portable-111827?logo=openai&logoColor=white" alt="Portable agent skill"></a>
+  <a href="#supported-agent-runtimes"><img src="https://img.shields.io/badge/Codex-native-10a37f?logo=openai&logoColor=white" alt="Codex native"></a>
+  <a href="#supported-agent-runtimes"><img src="https://img.shields.io/badge/Hermes-portable-7c3aed" alt="Hermes portable"></a>
+  <a href="#supported-agent-runtimes"><img src="https://img.shields.io/badge/OpenClaw-portable-f97316" alt="OpenClaw portable"></a>
   <a href="https://github.com/alexwang91/writing-showcase-readmes/actions/workflows/validate.yml"><img src="https://github.com/alexwang91/writing-showcase-readmes/actions/workflows/validate.yml/badge.svg" alt="Validate skill"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/alexwang91/writing-showcase-readmes?logo=opensourceinitiative&logoColor=white" alt="License"></a>
   <a href="https://github.com/alexwang91/writing-showcase-readmes/stargazers"><img src="https://img.shields.io/github/stars/alexwang91/writing-showcase-readmes?style=social" alt="GitHub stars"></a>
@@ -21,6 +24,7 @@ _A Codex skill for turning sparse repos and agent skills into honest, high-conve
 
 <p align="center">
   <a href="#get-started">Install</a> |
+  <a href="#supported-agent-runtimes">Runtimes</a> |
   <a href="#what-it-does">What it does</a> |
   <a href="#proof">Proof</a> |
   <a href="#star-history">Star History</a> |
@@ -33,14 +37,15 @@ _A Codex skill for turning sparse repos and agent skills into honest, high-conve
 
 </div>
 
-Showcase README Writer packages the README patterns behind repos like `mattpocock/skills`, `chopratejas/headroom`, and `aaif-goose/goose` into one reusable Codex skill: rich badges, small visual signals, star charts, proof tables, compatibility matrices, install paths, collapsible depth, and a story that does not make up evidence.
+Showcase README Writer packages the README patterns behind repos like `mattpocock/skills`, `chopratejas/headroom`, and `aaif-goose/goose` into one reusable agent skill: rich badges, small visual signals, star charts, proof tables, compatibility matrices, install paths, collapsible depth, and a story that does not make up evidence.
 
 ## What It Does
 
 - **Audits the project first** - reads `README*`, manifests, workflows, docs, license files, skill metadata, screenshots, and package clues before writing.
 - **Builds the above-the-fold trust block** - title, tagline, badges, navigation, LLM hint, pitch, and first action.
 - **Adds proof without bluffing** - benchmark tables, validation output, compatibility matrices, Star History, and comparison tables only when evidence exists.
-- **Handles skills and normal repos** - works for Codex skills, skill collections, CLIs, libraries, apps, and open source launch pages.
+- **Handles skills and normal repos** - works for Codex skills, Claude/Hermes/OpenClaw-style instruction packs, CLIs, libraries, apps, and open source launch pages.
+- **Travels across agents** - can be installed natively in Codex or imported as a persistent instruction/playbook by Claude Code, Hermes, OpenClaw, Goose, Cursor, Aider, Gemini CLI, and other instruction-aware agents.
 - **Uses collapsible depth** - keeps advanced integrations, internals, and long feature lists available without crowding the first read.
 - **Checks the final README** - verifies badge slugs, Star History links, local image paths, commands, claims, and anchors.
 
@@ -76,6 +81,8 @@ git clone https://github.com/alexwang91/writing-showcase-readmes.git
 cd writing-showcase-readmes
 ```
 
+### Codex Native Install
+
 Install into Codex on macOS or Linux:
 
 ```bash
@@ -95,6 +102,36 @@ Start a fresh Codex thread, then invoke it:
 ```text
 Use $writing-showcase-readmes to rewrite this repository README into a polished showcase.
 ```
+
+### Portable Import For Other Agents
+
+For Claude Code, Hermes, OpenClaw, Goose, Cursor, Aider, Gemini CLI, and similar tools, import the same two files as persistent project instructions:
+
+1. Put this repository in the agent workspace, or copy `skills/writing-showcase-readmes/` into the tool's skills, rules, memory, or instructions directory.
+2. Tell the agent to read both files before drafting:
+
+```text
+Use the Showcase README Writer skill at skills/writing-showcase-readmes/SKILL.md.
+Also load skills/writing-showcase-readmes/references/readme-elements.md.
+Rewrite this repository README into a polished showcase without inventing evidence.
+```
+
+3. Keep `references/readme-elements.md` next to `SKILL.md`; the workflow intentionally loads the element library only when README work starts.
+
+## Supported Agent Runtimes
+
+| Runtime | Mode | How To Use It |
+|---------|------|---------------|
+| Codex | Native skill | Copy `skills/writing-showcase-readmes` to `~/.codex/skills/`, then invoke `$writing-showcase-readmes` |
+| Claude Code | Portable skill/instruction | Put the folder where your Claude setup loads skills or project instructions, then ask it to read `SKILL.md` |
+| Hermes Agent | Portable skill/instruction | Add the folder to the Hermes workspace or skills area, then reference `SKILL.md` and the element library in your task |
+| OpenClaw | Portable skill/instruction | Add the folder to the OpenClaw workspace, skill area, or memory/rules setup, then ask it to load both Markdown files |
+| Goose | Portable project instruction | Add the folder to the repo and ask Goose to load the skill files before editing `README.md` |
+| Cursor | Portable rules/context | Add the skill folder to the project and reference it from Cursor rules or chat context |
+| Aider | Portable repo context | Add the files to the chat or repo context before asking Aider to rewrite the README |
+| Gemini CLI / other agents | Portable instruction | Provide `SKILL.md` plus `references/readme-elements.md` as instruction context |
+
+Native install paths differ by agent and change over time. This repo keeps the core workflow plain Markdown so any tool that can read project instructions can use it.
 
 ## Proof
 
@@ -120,6 +157,7 @@ This repo includes a real validation script and GitHub Actions workflow, so the 
 | Surface | Status | Notes |
 |---------|:------:|-------|
 | Codex local skills | Ready | Install under `~/.codex/skills/writing-showcase-readmes` |
+| Claude Code, Hermes, OpenClaw, Goose, Cursor, Aider | Portable | Import as skills, rules, memory, or project context |
 | Skill repositories | Ready | Reads `SKILL.md`, `agents/openai.yaml`, references, scripts, and examples |
 | GitHub repositories | Ready | Uses repo slug for badges and Star History |
 | CLIs and libraries | Ready | Looks for install commands, package metadata, docs, and workflows |
@@ -145,7 +183,7 @@ This repo includes a real validation script and GitHub Actions workflow, so the 
 
 | Path | Purpose |
 |------|---------|
-| [`skills/writing-showcase-readmes/SKILL.md`](skills/writing-showcase-readmes/SKILL.md) | The workflow future Codex sessions load |
+| [`skills/writing-showcase-readmes/SKILL.md`](skills/writing-showcase-readmes/SKILL.md) | The workflow future agents load |
 | [`skills/writing-showcase-readmes/references/readme-elements.md`](skills/writing-showcase-readmes/references/readme-elements.md) | The reusable README component library |
 | [`skills/writing-showcase-readmes/agents/openai.yaml`](skills/writing-showcase-readmes/agents/openai.yaml) | Codex UI metadata |
 | [`scripts/validate_skill.py`](scripts/validate_skill.py) | Local and CI validation |
@@ -176,7 +214,7 @@ This repo includes a real validation script and GitHub Actions workflow, so the 
 | Start here | Go deeper |
 |------------|-----------|
 | [Skill workflow](skills/writing-showcase-readmes/SKILL.md) | [Element library](skills/writing-showcase-readmes/references/readme-elements.md) |
-| [Install commands](#get-started) | [Compatibility matrix](#compatibility) |
+| [Install commands](#get-started) | [Supported runtimes](#supported-agent-runtimes) |
 | [Validation](scripts/validate_skill.py) | [Agent index](llms.txt) |
 
 ## Compared To
